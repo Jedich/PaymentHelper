@@ -17,15 +17,15 @@ class Calculations
         $summaryPlus = 0;
         $summaryMinus = 0;
         $debtArray = 0;
-        foreach ($payments as $key => $value) {
+        /* foreach ($payments as $key => $value) { */
+        foreach ($payments as $key){
             foreach ($members as $member) {
-                if ($member = $key) {
-                    $sum += $value;
+                if ($member = $key[0]) {
+                    $sum += $key[1];
                 }
                 $summary[] = [$member => $sum];
                 $sum = 0;
-            }
-        }
+            }}
         foreach ($summary as $value) {
             $debtSum += $value;
         }
