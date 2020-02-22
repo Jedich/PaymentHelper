@@ -15,38 +15,8 @@
             </ul>
         </div>
         <section class="container-fluid" style="display: flex; justify-content: center;">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
-            Lorem ipsum dddolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
+               <h3>Group info</h3>
+
         </section>
     </div>
 </div>
