@@ -130,4 +130,17 @@ a.desc:after {
      background-color: #e9c46a;
      word-break: break-word;
      color: #264653;
+     outline: none;
  }
+
+ ul.list-group > a.list-group-item:hover{
+     background-color: #e9d46a;
+ }
+
+ul.list-group > a.active-item{
+    background-color: #f4a261;
+}
+
+ul.list-group > a.active-item:hover{
+    background-color: #f4a261;
+}
