@@ -88,7 +88,6 @@ class SiteController extends Controller
 			array_push($members, $member['user_id']);
 		$calculation = new Calculations();
 		$debt = $calculation->Calculations($payments, $members);
-		//json_encode()
 		print_r($debt);
 		return $this->render('index', [
 			'debt' => $debt,
