@@ -18,7 +18,6 @@ class Calculations
         $summaryMinus = [];
         $debtArray = [];
         $superSummary = [];
-        /* foreach ($payments as $key => $value) { */
         foreach ($payments as $key) {
             foreach ($members as $member) {
                 $sum = 0;
@@ -33,7 +32,6 @@ class Calculations
         }
         $debt = $debtSum / count($members);
         foreach ($summary as $id => $value) {
-          //  $value -= $debt;
             $superSummary[$id] = $value-$debt;
         }
         foreach ($superSummary as $key => $value) {
