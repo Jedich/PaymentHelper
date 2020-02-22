@@ -62,7 +62,7 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionIndex($id)
+    public function actionIndex($id = 1)
     {
     	$groups=[];
         $groupsId = GroupMembers::findAll(['user_id' => $id ]);

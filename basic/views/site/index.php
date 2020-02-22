@@ -1,6 +1,9 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $groups */
+
+var_dump($groups);
 
 ?>
 
