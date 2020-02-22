@@ -14,14 +14,14 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="site-history">
-    <h1>Actions history</h1>
+    <h1>Payments history</h1>
     <table class="table table-hover table-bordered">
         <thead>
         <tr>
             <th>#</th>
-            <th>Where?</th>
             <th>Who?</th>
-            <th>Sum</th>
+            <th>Where?</th>
+            <th>Payment</th>
         </tr>
         </thead>
         <tbody>
