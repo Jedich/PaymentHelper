@@ -144,3 +144,11 @@ ul.list-group > a.active-item{
 ul.list-group > a.active-item:hover{
     background-color: #f4a261;
 }
+
+thead > tr > th {
+    background-color: #f4a261;
+}
+
+tbody > tr > td, th {
+    background-color: #e9c46a;
+}
