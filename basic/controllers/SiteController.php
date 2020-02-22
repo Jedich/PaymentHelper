@@ -62,13 +62,15 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionIndex($id)
+    public function actionIndex($id = 1)
     {
     	$groups=[];
         $groupsId = GroupMembers::findAll(['user_id' => $id ]);
             foreach ($groupsId as $key) {
-                $groups = [GroupsInfo::findOne(['group_id' => $key])];
+                $groupsa = [GroupsInfo::findOne(['group_id' => $key])];
         }
+            foreach ($groupsa as $group)
+            	array_push($groups, $groupsa['group_name']);
         return $this->render('index', ["groups" => $groups]);
     }
 
