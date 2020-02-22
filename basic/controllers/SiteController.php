@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\calculations\Calculations;
+use app\models\Payments;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -65,14 +67,34 @@ class SiteController extends Controller
     public function actionIndex($id)
     {
     	$groups=[];
-        $groupsId = GroupMembers::findAll(['user_id' => $id ]);
-            foreach ($groupsId as $key) {
-                $groupsa = [GroupsInfo::findOne(['group_id' => $key])];
-        }
+        $groupsId = GroupMembers::find()->where(["user_id" => $id])->all();
+        $groupsAll = GroupsInfo::find()->all();
+        $groupsa = [];
+        foreach($groupsAll as $gr){
+        	//if(gr[""])
+		}
             foreach ($groupsa as $group)
             	array_push($groups, $groupsa['group_name']);
+            print_r($groups);
         return $this->render('index', ["groups" => $groups]);
     }
+	public function actionCalculate($group_id) {
+		$membersFull = GroupMembers::find()->where(["group_id" => $group_id])->all();
+		$paymentsFull = Payments::find()->where(["group_id" => $group_id])->all();
+		$payments = [];
+		$members= [];
+		foreach ($paymentsFull as $payment)
+			array_push($payments, [$payment['user_id'], $payment['cash']]);
+		foreach($membersFull as $member)
+			array_push($members, $member['user_id']);
+		$calculation = new Calculations();
+		$debt = $calculation->Calculations($payments, $members);
+		//json_encode()
+		print_r($debt);
+		return $this->render('index', [
+			'model' => $payments,
+		]);
+	}
 
     /**
      * Login action.
