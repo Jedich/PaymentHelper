@@ -22,9 +22,7 @@ class m200222_095714_create_table_group_members extends Migration
      */
     public function safeDown()
     {
-        echo "m200222_095714_create_table_group_members cannot be reverted.\n";
-
-        return false;
+    	$this->dropTable("group_members");
     }
 
     /*
