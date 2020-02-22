@@ -43,21 +43,21 @@ class Calculations
                 $summaryMinus[$key] = $value;
             }
         }
-   /*     foreach ($summaryPlus as $key1 => $value1) {
+        foreach ($summaryPlus as $key1 => $value1) {
             foreach ($summaryMinus as $key2 => $value2) {
-                if ($value1 > 0) {
+                if ($value1 >= 0) {
                     if ($value1 += $value2 < 0) {
-                        $summaryMinus[$value2 += $value1;
+                        $summaryMinus[$key2] = $value2 + $value1;
                         $value1 = 0;
                     } else {
-                        $value1 += $value2;
+                        $summaryPlus[$key1] = $value1 + $value2;
                     }
-                    array_push($debtArray, [$key2, $key1, $value2]);
+                    array_push($debtArray, [$key2, $key1, -$value2]);
                 } else {
                     break;
                 }
             }
-        }*/
+        }
         return $debtArray;
     }
 }
