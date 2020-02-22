@@ -6,6 +6,7 @@ use yii\helpers\Html;
 
 $this->title = 'Debt receipt';
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="site-debt">
     <h1><?= Html::encode($this->title) ?></h1>

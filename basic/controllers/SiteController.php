@@ -64,7 +64,7 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionIndex($id = 1)
+    public function actionIndex()
     {
     	$groups=[];
         $groupsAll = GroupsInfo::find()->all();
@@ -74,6 +74,7 @@ class SiteController extends Controller
 		}
         return $this->render('index', ["groups" => $groups]);
     }
+
 	public function actionCalculate($group_id) {
 		$membersFull = GroupMembers::find()->where(["group_id" => $group_id])->all();
 		$paymentsFull = Payments::find()->where(["group_id" => $group_id])->all();
@@ -87,7 +88,7 @@ class SiteController extends Controller
 		$debt = $calculation->Calculations($payments, $members);
 		//json_encode()
 		print_r($debt);
-		return $this->render('index', [
+		return $this->render('debt', [
 			'debt' => $debt,
 		]);
 	}
@@ -150,5 +151,10 @@ class SiteController extends Controller
 //            $groups[$group->attributes['group_id']] = $group->attributes['group_name'];
 //        }
         return $this->render('debt');
+    }
+
+    public function actionInfo($groupId){
+        $groupInfo = $this->actionCalculate($groupId);
+        $this->render('index', ['groupInfo' => $groupInfo]);
     }
 }
