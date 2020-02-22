@@ -14,6 +14,11 @@ AppAsset::register($this);
 
 $this->title = 'Payment Helper';
 Yii::$app->name = 'PaymentHelper';
+
+if (class_exists('yii\debug\Module')) {
+    $this->off(\yii\web\View::EVENT_END_BODY, [\yii\debug\Module::getInstance(), 'renderToolbar']);
+}
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -42,8 +47,8 @@ Yii::$app->name = 'PaymentHelper';
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'Debt', 'url' => ['/site/about']],
-            ['label' => 'History', 'url' => ['/site/contact']],
+            ['label' => 'Debt', 'url' => ['/site/debt']],
+            ['label' => 'History', 'url' => ['/site/history']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
@@ -72,7 +77,7 @@ Yii::$app->name = 'PaymentHelper';
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Payment Helper <?= date('Y') ?></p>
+        <p class="text-center">&copy; Payment Helper <?= date('Y') ?></p>
 
 <!--        <p class="pull-right">--><?//= Yii::powered() ?><!--</p>-->
     </div>
