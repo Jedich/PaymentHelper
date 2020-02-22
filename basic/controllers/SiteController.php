@@ -91,7 +91,7 @@ class SiteController extends Controller
 		//json_encode()
 		print_r($debt);
 		return $this->render('index', [
-			'model' => $payments,
+			'debt' => $debt,
 		]);
 	}
 
