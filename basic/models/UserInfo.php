@@ -2,103 +2,93 @@
 
 namespace app\models;
 
-class UserInfo extends \yii\base\BaseObject implements \yii\web\IdentityInterface
+use Yii;
+
+/**
+ * This is the model class for table "user_info".
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $phone
+ * @property string $password
+ *
+ * @property DebtInfo[] $debtInfos
+ * @property DebtInfo[] $debtInfos0
+ * @property GroupMembers[] $groupMembers
+ * @property Payments[] $payments
+ */
+class UserInfo extends \yii\db\ActiveRecord
 {
-    public $id;
-    public $username;
-    public $password;
-    public $authKey;
-    public $accessToken;
-
-    private static $users = [
-        '100' => [
-            'id' => '100',
-            'username' => 'admin',
-            'password' => 'admin',
-            'authKey' => 'test100key',
-            'accessToken' => '100-token',
-        ],
-        '101' => [
-            'id' => '101',
-            'username' => 'demo',
-            'password' => 'demo',
-            'authKey' => 'test101key',
-            'accessToken' => '101-token',
-        ],
-    ];
-
-
     /**
      * {@inheritdoc}
      */
-    public static function findIdentity($id)
+    public static function tableName()
     {
-        return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
+        return 'user_info';
     }
 
     /**
      * {@inheritdoc}
      */
-    public static function findIdentityByAccessToken($token, $type = null)
+    public function rules()
     {
-        foreach (self::$users as $user) {
-            if ($user['accessToken'] === $token) {
-                return new static($user);
-            }
-        }
-
-        return null;
+        return [
+            [['name', 'phone', 'password'], 'required'],
+            [['name', 'password'], 'string', 'max' => 128],
+            [['phone'], 'string', 'max' => 32],
+        ];
     }
 
     /**
-     * Finds user by username
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'name' => 'Name',
+            'phone' => 'Phone',
+            'password' => 'Password',
+        ];
+    }
+
+    /**
+     * Gets query for [[DebtInfos]].
      *
-     * @param string $username
-     * @return static|null
+     * @return \yii\db\ActiveQuery
      */
-    public static function findByUsername($username)
+    public function getDebtInfos()
     {
-        foreach (self::$users as $user) {
-            if (strcasecmp($user['username'], $username) === 0) {
-                return new static($user);
-            }
-        }
-
-        return null;
+        return $this->hasMany(DebtInfo::className(), ['user1_id' => 'id']);
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getAuthKey()
-    {
-        return $this->authKey;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function validateAuthKey($authKey)
-    {
-        return $this->authKey === $authKey;
-    }
-
-    /**
-     * Validates password
+     * Gets query for [[DebtInfos0]].
      *
-     * @param string $password password to validate
-     * @return bool if password provided is valid for current user
+     * @return \yii\db\ActiveQuery
      */
-    public function validatePassword($password)
+    public function getDebtInfos0()
     {
-        return $this->password === $password;
+        return $this->hasMany(DebtInfo::className(), ['user2_id' => 'id']);
+    }
+
+    /**
+     * Gets query for [[GroupMembers]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGroupMembers()
+    {
+        return $this->hasMany(GroupMembers::className(), ['user_id' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Payments]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPayments()
+    {
+        return $this->hasMany(Payments::className(), ['user_id' => 'id']);
     }
 }
