@@ -69,6 +69,8 @@ class SiteController extends Controller
 //            $groups[$id] = GroupsInfo::find(['group_id' => $id]);
 //        }
         return $this->render('index'/*, $groups*/);
+
+        return $this->render('index');
     }
 
     /**
