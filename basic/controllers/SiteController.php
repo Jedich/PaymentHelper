@@ -67,14 +67,13 @@ class SiteController extends Controller
     public function actionIndex($id = 1)
     {
     	$groups=[];
-        $groupsId = GroupMembers::find()->where(["user_id" => $id])->all();
+        //$groupsId = GroupMembers::find()->where(["user_id" => $id])->all();
         $groupsAll = GroupsInfo::find()->all();
-        $groupsa = [];
-        foreach($groupsAll as $gr){
-        	//if(gr[""])
+        foreach($groupsAll as $group)
+		{
+			$groups[$group->attributes['group_id']] = $group->attributes['group_name'];
+
 		}
-            foreach ($groupsa as $group)
-            	array_push($groups, $groupsa['group_name']);
             print_r($groups);
         return $this->render('index', ["groups" => $groups]);
     }
