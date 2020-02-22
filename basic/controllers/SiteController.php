@@ -90,7 +90,7 @@ class SiteController extends Controller
 		$debt = $calculation->Calculations($payments, $members);
 		//json_encode()
 		print_r($debt);
-		return $this->render('index', [
+		return $this->render('debt', [
 			'debt' => $debt,
 		]);
 	}
