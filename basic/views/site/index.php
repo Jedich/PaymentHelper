@@ -15,7 +15,7 @@
                 <a href="" class="list-group-item">Vestibulum at eros</a>
             </ul>
         </div>
-        <section class="col-xs-6 col-md-8">
+        <section class="container-fluid" style="display: flex; justify-content: center;">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dicta dolor dolores eaque exercitationem ipsam modi molestiae nostrum perspiciatis quasi, quod ratione sequi, veniam voluptas. Eius enim eos est.

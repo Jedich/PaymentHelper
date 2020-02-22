@@ -9,6 +9,8 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+//use app\models\GroupMembers;
+//use app\models\GroupsInfo;
 
 class SiteController extends Controller
 {
@@ -61,7 +63,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+//        $groupsId = GroupMembers::findAll(['user_id' => 1]);
+//        print_r($groupsId);
+//        foreach ($groupsId as $id){
+//            $groups[$id] = GroupsInfo::find(['group_id' => $id]);
+//        }
+        return $this->render('index'/*, $groups*/);
     }
 
     /**
