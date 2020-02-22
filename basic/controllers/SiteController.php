@@ -67,14 +67,11 @@ class SiteController extends Controller
     public function actionIndex($id = 1)
     {
     	$groups=[];
-        //$groupsId = GroupMembers::find()->where(["user_id" => $id])->all();
         $groupsAll = GroupsInfo::find()->all();
         foreach($groupsAll as $group)
 		{
 			$groups[$group->attributes['group_id']] = $group->attributes['group_name'];
-
 		}
-            print_r($groups);
         return $this->render('index', ["groups" => $groups]);
     }
 	public function actionCalculate($group_id) {
@@ -146,6 +143,12 @@ class SiteController extends Controller
      */
     public function actionDebt()
     {
+//        $groups=[];
+//        $groupsAll = GroupsInfo::find()->all();
+//        foreach($groupsAll as $group)
+//        {
+//            $groups[$group->attributes['group_id']] = $group->attributes['group_name'];
+//        }
         return $this->render('debt');
     }
 }
