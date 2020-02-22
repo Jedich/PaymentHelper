@@ -14,9 +14,10 @@ class GroupController extends \yii\web\Controller {
     	$payments = [];
     	foreach ($paymentsFull as $payment)
     		array_push($payments, [$payment['user_id'], $payment['cash']]);
-    	//$calculation = new Calculations();
-    	//$calculation->Calculations($payments, $members);
-		print_r($payments);
+    	$calculation = new Calculations();
+    	$debt = $calculation->Calculations($payments, $members);
+		//json_encode()
+		print_r($debt);
 		return $this->render('index', [
 			'model' => $payments,
 		]);

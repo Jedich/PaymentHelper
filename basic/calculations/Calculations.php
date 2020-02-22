@@ -10,7 +10,7 @@ class Calculations
 
     public function Calculations($payments, $members)
     {
-        $summary = null;
+        $summary = [];
         $sum = 0;
         $debtSum = 0;
         $debt = 0;
@@ -23,7 +23,7 @@ class Calculations
                 if ($member = $key[0]) {
                     $sum += $key[1];
                 }
-                $summary[] = [$member => $sum];
+                $summary[$member] = $sum;
                 $sum = 0;
             }}
         foreach ($summary as $value) {
@@ -35,9 +35,9 @@ class Calculations
         }
         foreach ($summary as $key => $value) {
             if ($value >= 0) {
-                $summaryPlus[] = [$key => $value];
+                $summaryPlus[$key] = $value;
             } else {
-                $summaryMinus[] = [$key => $value];
+                $summaryMinus[$key] = $value;
             }
         }
         foreach ($summaryPlus as $key1 => $value1) {
