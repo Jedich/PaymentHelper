@@ -13,6 +13,7 @@ class m200222_095712_create_table_payments extends Migration
     public function safeUp()
     {
         $this->createTable('payments', [
+            'id_payment' => $this->primaryKey(11)->unsigned(),
             'group_id' => $this->integer(11)->unsigned(),
             'user_id' => $this->integer()->unsigned()->notNull(),
             'cash' => $this->float(2)->notNull(),
