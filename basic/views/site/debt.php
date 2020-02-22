@@ -13,6 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <thead>
             <tr>
                 <th>#</th>
+                <th>Who?</th>
                 <th>Whom?</th>
                 <th>Where?</th>
                 <th>Sum</th>
@@ -22,6 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <tr>
                     <th>1</th>
                     <td>Mark</td>
+                    <td>Otto</td>
                     <td>Angry Beavers</td>
                     <td>120</td>
                 </tr>
