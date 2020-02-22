@@ -124,3 +124,10 @@ a.desc:after {
  li.active > a{
      background-color: #2a9d8f !important;
  }
+
+ ul.list-group > a.list-group-item{
+     border: 1px solid white;
+     background-color: #e9c46a;
+     word-break: break-word;
+     color: #264653;
+ }
