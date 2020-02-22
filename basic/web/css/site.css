@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Share+Tech+Mono|Ubuntu&display=swap');
+
 html,
 body {
     height: 100%;
+    font-family: 'Ubuntu';
 }
 
 .wrap {
@@ -113,3 +116,11 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.navbar {
+    background-color: #264653;
+    border: 0;
+}
+ li.active > a{
+     background-color: #2a9d8f !important;
+ }
