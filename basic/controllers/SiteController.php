@@ -147,4 +147,10 @@ class SiteController extends Controller
     {
         return $this->render('debt');
     }
+
+    public function actionInfo($groupId)
+    {
+        $groupInfo = $this->actionCalculate($groupId);
+        $this->render('index', ['groupInfo' => $groupInfo]);
+    }
 }
