@@ -67,8 +67,10 @@ class SiteController extends Controller
     	$groups=[];
         $groupsId = GroupMembers::findAll(['user_id' => $id ]);
             foreach ($groupsId as $key) {
-                $groups = [GroupsInfo::findOne(['group_id' => $key])];
+                $groupsa = [GroupsInfo::findOne(['group_id' => $key])];
         }
+            foreach ($groupsa as $group)
+            	array_push($groups, $groupsa['group_name']);
         return $this->render('index', ["groups" => $groups]);
     }
 
