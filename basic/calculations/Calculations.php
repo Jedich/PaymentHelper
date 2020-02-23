@@ -46,23 +46,39 @@ class Calculations
                 $summaryMinus[$key] = $value;
             }
         }
+        // print_r($superSummary);
         foreach ($summaryPlus as $key1 => $value1) {
+            $val1 = $value1;
             foreach ($summaryMinus as $key2 => $value2) {
-                if ($summaryPlus[$key1] >    0) {
-                    if ($summaryPlus[$key1] + $summaryMinus[$key2] < 0) {
-                        $summaryMinus[$key2] = $value2 + $value1;
-                        $summaryPlus[$key1] = 0;
+                if ($val1 > 0) {
+                    if ($val1 + $summaryMinus[$key2] < 0) {
+                        if ($val1 <> 0) {
+                            array_push($debtArray, [$key2, $key1, $val1]);
+                        }
+                        $summaryMinus[$key2] = $value2 + $val1;
+                        $val1 = 0;
                     } else {
-                        $summaryPlus[$key1] = $value1 + $value2;
-                        $summaryMinus[$key2]=0;
+                        if ($value2 <> 0) {
+                            array_push($debtArray, [$key2, $key1, -$value2]);
+                        }
+                        $val1 += $value2;
+                        $summaryMinus[$key2] = 0;
                     }
-                    if ($value2<>0){
-                    array_push($debtArray, [$key2, $key1, -$value2]);}
+                    /*  if ($value2 <> 0) {
+                          array_push($debtArray, [$key2, $key1, -$value2]);
+                      }*/
                 } else {
                     break;
                 }
             }
         }
+        /*   foreach ($summaryPlus as $key1 => $value1) {
+               foreach ($summaryMinus as $key2 => $value2) {
+                   if($value1 > 0){
+                       if($value1+$)
+                   }
+               }
+           }*/
         return $debtArray;
     }
 }
