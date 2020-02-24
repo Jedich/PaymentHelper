@@ -20,8 +20,8 @@ class Calculations
         foreach ($payments as $key) {
             foreach ($members as $member) {
                 $sum = 0;
-                if ($member == $key[0]) {
-                    $sum += $key[1];
+                if ($member == $key['user_id']) {
+                    $sum += $key['cash'];
                     $summary[$member] += $sum;
                 } else {
                     $summary[$member] += 0;
