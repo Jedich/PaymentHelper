@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $table */
 
 use yii\helpers\Html;
 
@@ -12,21 +13,19 @@ $this->params['breadcrumbs'][] = $this->title;
     <table class="table table-hover table-bordered">
         <thead>
             <tr>
-                <th>#</th>
-                <th>Who?</th>
                 <th>Whom?</th>
                 <th>Where?</th>
                 <th>Sum</th>
             </tr>
         </thead>
             <tbody>
+            <?php foreach($table as $tableColumn) { ?>
                 <tr>
-                    <th>1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>Angry Beavers</td>
-                    <td>120</td>
+                    <td><?=$tableColumn[0]?></td>
+                    <td><?=$tableColumn[1]?></td>
+                    <td><?=$tableColumn[2]?></td>
                 </tr>
+            <?php } ?>
             </tbody>
     </table>
 </div>

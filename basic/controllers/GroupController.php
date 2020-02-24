@@ -25,9 +25,13 @@ class GroupController extends \yii\web\Controller {
 			$model->sum = $debtPiece[2];
 			$model->save();
 		}
+		Payments::deleteAll(["group_id" => $group_id]);
 		print_r("a");
 		return $this->render('index', [
 			'debt' => $debt,
 		]);
+	}
+	public function actionAddPayment() {
+
 	}
 }
