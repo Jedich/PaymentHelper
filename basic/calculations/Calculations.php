@@ -11,7 +11,6 @@ class Calculations
     public function Calculations($payments, $members)
     {
         $summary = [];
-        // $sum = 0;
         $debtSum = 0;
         $debt = 0;
         $summaryPlus = [];
@@ -27,11 +26,12 @@ class Calculations
                 } else {
                     $summary[$member] += 0;
                 }
+                $debtSum += $sum;
             }
         }
-        foreach ($summary as $value) {
-            $debtSum += $value;
-        }
+        /* foreach ($summary as $value) {
+             $debtSum += $value;
+         }*/
         $debt = $debtSum / count($members);
 
         foreach ($summary as $id => $value) {
@@ -46,7 +46,6 @@ class Calculations
                 $summaryMinus[$key] = $value;
             }
         }
-        // print_r($superSummary);
         foreach ($summaryPlus as $key1 => $value1) {
             $val1 = $value1;
             foreach ($summaryMinus as $key2 => $value2) {
@@ -64,21 +63,11 @@ class Calculations
                         $val1 += $value2;
                         $summaryMinus[$key2] = 0;
                     }
-                    /*  if ($value2 <> 0) {
-                          array_push($debtArray, [$key2, $key1, -$value2]);
-                      }*/
                 } else {
                     break;
                 }
             }
         }
-        /*   foreach ($summaryPlus as $key1 => $value1) {
-               foreach ($summaryMinus as $key2 => $value2) {
-                   if($value1 > 0){
-                       if($value1+$)
-                   }
-               }
-           }*/
         return $debtArray;
     }
 }
