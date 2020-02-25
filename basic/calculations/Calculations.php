@@ -10,6 +10,8 @@ class Calculations
 
     public function Calculations($payments, $members)
     {
+        $iter = 0; //ітератор для кльового заукруглення
+        $rounder = 0.01; //Округлення до найменших одиниць (Зручно коли використовувати номінали копійок чи купюр)
         $totalArray = []; // Підсумовані виплати (Коли один платить кілька разів, то це стає однією загальною виплатою)
         $totalSpent = 0; // Сумарно потрачені гроші за сеанс
         $middleSpent = 0; // Скільки мали би заплатити всі, якби платили би порівну
@@ -18,7 +20,6 @@ class Calculations
         $balancePlus = []; // Масив для тих КОМУ винні
         $balanceMinus = []; // Масив для тих ХТО винен
         $debtArray = []; // Кінцевий очікуваний масив
-
         // Цей форіч формує $totalArray і $totalSpent
         foreach ($payments as $key) {
             foreach ($members as $member) {
@@ -32,6 +33,7 @@ class Calculations
                 $totalSpent += $sum;
             }
         }
+
 
         // Розрахунок $middleSpent як середнє арифметичне
         $middleSpent = $totalSpent / count($members);
@@ -49,30 +51,39 @@ class Calculations
                 $balanceMinus[$key] = $value;
             }
         }
-
-        // форіч розрахунку виплат
         foreach ($balancePlus as $key1 => $value1) {
             $val1 = $value1;
             foreach ($balanceMinus as $key2 => $value2) {
                 if ($val1 > 0) {
                     if ($val1 + $balanceMinus[$key2] < 0) {
                         if ($val1 <> 0) {
-                            array_push($debtArray, [$key2, $key1, $val1]);
+                            array_push($debtArray,
+                                [$key2, $key1, round($val1/$rounder)*$rounder + $iter*$rounder]);
+                            if(round($val1/$rounder)*$rounder>$val1){
+                               $iter = 1-$iter;
+                            } else { $iter = 0;}
                         }
                         $balanceMinus[$key2] = $value2 + $val1;
                         $val1 = 0;
                     } else {
                         if ($value2 <> 0) {
-                            array_push($debtArray, [$key2, $key1, -$value2]);
+                            array_push($debtArray,
+                                [$key2, $key1, -round($value2/$rounder)*$rounder + $iter*$rounder]);
+                            if(round($val1/$rounder)*$rounder>$val1){
+                                $iter = 1-$iter;
+                            } else {$iter = 0;}
+                        }
                         }
                         $val1 += $value2;
                         $balanceMinus[$key2] = 0;
                     }
-                } else {
+                 else {
                     break;
                 }
             }
         }
+        print_r($debtArray);
         return $debtArray;
+
     }
 }
