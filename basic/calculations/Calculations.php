@@ -10,58 +10,63 @@ class Calculations
 
     public function Calculations($payments, $members)
     {
-        $summary = [];
-        $debtSum = 0;
-        $debt = 0;
-        $summaryPlus = [];
-        $summaryMinus = [];
-        $debtArray = [];
-        $superSummary = [];
+        $totalArray = []; // Підсумовані виплати (Коли один платить кілька разів, то це стає однією загальною виплатою)
+        $totalSpent = 0; // Сумарно потрачені гроші за сеанс
+        $middleSpent = 0; // Скільки мали би заплатити всі, якби платили би порівну
+        $balanceChange = []; // Масив, що вказує наскільки повинен змінитись рахунок того що платив (Якщо
+        //більше нуля, то йому винні, менше - він
+        $balancePlus = []; // Масив для тих КОМУ винні
+        $balanceMinus = []; // Масив для тих ХТО винен
+        $debtArray = []; // Кінцевий очікуваний масив
+
+        // Цей форіч формує $totalArray і $totalSpent
         foreach ($payments as $key) {
             foreach ($members as $member) {
                 $sum = 0;
                 if ($member == $key['user_id']) {
                     $sum += $key['cash'];
-                    $summary[$member] += $sum;
+                    $totalArray[$member] += $sum;
                 } else {
-                    $summary[$member] += 0;
+                    $totalArray[$member] += 0;
                 }
-                $debtSum += $sum;
+                $totalSpent += $sum;
             }
         }
-        /* foreach ($summary as $value) {
-             $debtSum += $value;
-         }*/
-        $debt = $debtSum / count($members);
 
-        foreach ($summary as $id => $value) {
-            $superSummary[$id] = $value - $debt;
+        // Розрахунок $middleSpent як середнє арифметичне
+        $middleSpent = $totalSpent / count($members);
+
+        //Розрахунок балансу з урахуванням долі платника групи
+        foreach ($totalArray as $id => $value) {
+            $balanceChange[$id] = $value - $middleSpent;
         }
 
-
-        foreach ($superSummary as $key => $value) {
+        // Розподіл на підмасиви
+        foreach ($balanceChange as $key => $value) {
             if ($value >= 0) {
-                $summaryPlus[$key] = $value;
+                $balancePlus[$key] = $value;
             } else {
-                $summaryMinus[$key] = $value;
+                $balanceMinus[$key] = $value;
             }
         }
-        foreach ($summaryPlus as $key1 => $value1) {
+
+        // форіч розрахунку виплат
+        foreach ($balancePlus as $key1 => $value1) {
             $val1 = $value1;
-            foreach ($summaryMinus as $key2 => $value2) {
+            foreach ($balanceMinus as $key2 => $value2) {
                 if ($val1 > 0) {
-                    if ($val1 + $summaryMinus[$key2] < 0) {
+                    if ($val1 + $balanceMinus[$key2] < 0) {
                         if ($val1 <> 0) {
                             array_push($debtArray, [$key2, $key1, $val1]);
                         }
-                        $summaryMinus[$key2] = $value2 + $val1;
+                        $balanceMinus[$key2] = $value2 + $val1;
                         $val1 = 0;
                     } else {
                         if ($value2 <> 0) {
                             array_push($debtArray, [$key2, $key1, -$value2]);
                         }
                         $val1 += $value2;
-                        $summaryMinus[$key2] = 0;
+                        $balanceMinus[$key2] = 0;
                     }
                 } else {
                     break;
