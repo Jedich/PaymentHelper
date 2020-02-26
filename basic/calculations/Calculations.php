@@ -56,28 +56,26 @@ class Calculations
             foreach ($balanceMinus as $key2 => $value2) {
                 if ($val1 > 0) {
                     if ($val1 + $balanceMinus[$key2] < 0) {
-                        if ($val1 <> 0) {
-                            array_push($debtArray,
-                                [$key2, $key1, round($val1/$rounder)*$rounder + $iter*$rounder]);
-                            if(round($val1/$rounder)*$rounder>$val1){
-                               $iter = 1-$iter;
-                            } else { $iter = 0;}
+                        array_push($debtArray,
+                            [$key2, $key1, round($val1 / $rounder) * $rounder + $iter * $rounder]);
+                        if (round($val1 / $rounder) * $rounder > $val1) {
+                            $iter = 1 - $iter;
+                        } else {
+                            $iter = 0;
                         }
                         $balanceMinus[$key2] = $value2 + $val1;
                         $val1 = 0;
                     } else {
-                        if ($value2 <> 0) {
                             array_push($debtArray,
-                                [$key2, $key1, -round($value2/$rounder)*$rounder + $iter*$rounder]);
-                            if(round($val1/$rounder)*$rounder>$val1){
-                                $iter = 1-$iter;
-                            } else {$iter = 0;}
-                        }
-                        }
-                        $val1 += $value2;
+                                [$key2, $key1, -round($value2 / $rounder) * $rounder + $iter * $rounder]);
+                            if (round($val1 / $rounder) * $rounder > $val1) {
+                                $iter = 1 - $iter;
+                            } else {
+                                $iter = 0;
+                            }
                         $balanceMinus[$key2] = 0;
                     }
-                 else {
+                } else {
                     break;
                 }
             }
