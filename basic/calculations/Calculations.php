@@ -80,7 +80,6 @@ class Calculations
                 }
             }
         }
-        print_r($debtArray);
         return $debtArray;
 
     }
