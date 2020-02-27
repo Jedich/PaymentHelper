@@ -14,6 +14,11 @@ AppAsset::register($this);
 
 $this->title = 'Payment Helper';
 Yii::$app->name = 'PaymentHelper';
+
+if (class_exists('yii\debug\Module')) {
+    $this->off(\yii\web\View::EVENT_END_BODY, [\yii\debug\Module::getInstance(), 'renderToolbar']);
+}
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -42,20 +47,20 @@ Yii::$app->name = 'PaymentHelper';
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>'
-            )
+            ['label' => 'Debt', 'url' => ['/site/debt']],
+            ['label' => 'History', 'url' => ['/site/history']],
+//            Yii::$app->user->isGuest ? (
+//                ['label' => 'Login', 'url' => ['/site/login']]
+//            ) : (
+//                '<li>'
+//                . Html::beginForm(['/site/logout'], 'post')
+//                . Html::submitButton(
+//                    'Logout (' . Yii::$app->user->identity->username . ')',
+//                    ['class' => 'btn btn-link logout']
+//                )
+//                . Html::endForm()
+//                . '</li>'
+//            )
         ],
     ]);
     NavBar::end();
@@ -72,7 +77,7 @@ Yii::$app->name = 'PaymentHelper';
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Payment Helper <?= date('Y') ?></p>
+        <p class="text-center">&copy; Payment Helper <?= date('Y') ?></p>
 
 <!--        <p class="pull-right">--><?//= Yii::powered() ?><!--</p>-->
     </div>

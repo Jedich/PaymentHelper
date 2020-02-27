@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Share+Tech+Mono|Ubuntu&display=swap');
+
 html,
 body {
     height: 100%;
+    font-family: 'Ubuntu';
 }
 
 .wrap {
@@ -112,4 +115,40 @@ a.desc:after {
 
 .nav > li > form > button.logout:focus {
     outline: none;
+}
+
+.navbar {
+    background-color: #264653;
+    border: 0;
+}
+ li.active > a{
+     background-color: #2a9d8f !important;
+ }
+
+ ul.list-group > a.list-group-item{
+     border: 1px solid white;
+     background-color: #e9c46a;
+     word-break: break-word;
+     color: #264653;
+     outline: none;
+ }
+
+ ul.list-group > a.list-group-item:hover{
+     background-color: #e9d46a;
+ }
+
+ul.list-group > a.active-item{
+    background-color: #f4a261;
+}
+
+ul.list-group > a.active-item:hover{
+    background-color: #f4a261;
+}
+
+thead > tr > th {
+    background-color: #f4a261;
+}
+
+tbody > tr > td, th {
+    background-color: #e9c46a;
 }

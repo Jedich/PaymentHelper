@@ -2,13 +2,21 @@
 
 namespace app\controllers;
 
+use app\calculations\Calculations;
+
+use app\models\UserInfo;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
+
+use app\models\Payments;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\GroupMembers;
+use app\models\GroupsInfo;
+use app\models\DebtInfo;
 
 class SiteController extends Controller
 {
@@ -59,10 +67,23 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionIndex()
-    {
-        return $this->render('index');
+    public function actionIndex($id = 1) {
+        $groups = GroupsInfo::find()->asArray()->all();
+        return $this->render('index', ["groups" => $groups]);
     }
+    public function actionDebt($id){
+    	$currentDebts = DebtInfo::find()->where(["user1_id" => $id])->all();
+    	$table = [];
+
+    	foreach($currentDebts as $debt) {
+			$group = GroupsInfo::findOne($debt->attributes["group_id"]);
+			$loanshark = UserInfo::findOne($debt->attributes["user2_id"]);
+			array_push($table, [$loanshark["name"], $group['group_name'], $debt->attributes["sum"]]);
+    	}
+		return $this->render('debt', [
+			'table' => $table,
+		]);
+	}
 
     /**
      * Login action.
@@ -103,26 +124,9 @@ class SiteController extends Controller
      *
      * @return Response|string
      */
-    public function actionContact()
+    public function actionHistory()
     {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
+        return $this->render('history');
     }
 
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
 }
